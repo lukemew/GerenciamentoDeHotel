@@ -3,6 +3,16 @@ public class Inquilino {
     private String profissao;
     private int idade;
 
+
+    public void mostrarDetalhes(){
+        System.out.println("Exibindo informações do inquilino");
+        System.out.println("Inquilino hospedado: " + this.nome);
+        System.out.println("Profissão: " + this.profissao);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("---");
+    }
+
+    // Métodos de inserção e extração
     public void setNome(String nome) {
         this.nome = nome;
     }
