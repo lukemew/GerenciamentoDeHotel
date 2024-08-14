@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Reserva {
     private int idReserva;
     private Quarto quarto;
@@ -5,6 +8,7 @@ public class Reserva {
     private String status;
     private int numeroDeNoites;
     private double valorTotal;
+    static List<Reserva> reservas = new ArrayList();
 
 
     // Construtor da classe
@@ -12,6 +16,7 @@ public class Reserva {
         this.inquilino = inquilino;
         this.quarto = quarto;
         this.status = "Pendente";
+        reservas.add(this);
     }
 
     // Método de exibição:
@@ -78,6 +83,16 @@ public class Reserva {
         return this.valorTotal += valorQuarto * this.numeroDeNoites;
     }
 
+    public static void listarReservas(){
+        System.out.println("Listando reservas");
+
+        for(Reserva reserva : reservas) {
+            System.out.println("Id: " + reserva.idReserva);
+            System.out.println("Nome: " + reserva.inquilino.getNome());
+            System.out.println("Status: " + reserva.status);
+            System.out.println("--");
+        }
+    }
 
 }
 
